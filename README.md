@@ -4,6 +4,10 @@ A free, account-free learning studio for adults working toward Washington’s Hi
 
 ## Run it
 
+**Live studio:** https://goldennftplatform-svg.github.io/gednow/
+
+The Field Lab adds three interactive trails: read a bus timetable, check a paycheck, and reserve a computer lab session. Each includes three tasks, immediate explanations, and a completion stamp stored in the learner’s browser. Edit `public/lab.js` to update these sample documents and tasks.
+
 1. Double-click `START-HERE.bat` in `C:\Users\PreSafu\Desktop\gednow`. The folder can also be copied to another Windows computer. Python 3 or Node.js is required on the host only.
 2. Open **http://localhost:8012/** on the host. For a class on the same private Wi-Fi, use the second address printed by the launcher. Keep the server window open. If prompted by Windows Firewall, allow the host on the private network.
 3. To stop serving, press Ctrl+C. Manual launch: `python server.py` or `node server.js`. Both serve only `public/`.
