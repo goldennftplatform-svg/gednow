@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#2a0f4d">
+  <title>Abby's Alphabet Stage with Rumi</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232b0f52'/%3E%3Cpath d='M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 6 20.6l1.4-6.8L2.3 9.1l6.9-.8z' fill='%23ffd45e'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Abby's Stage">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ Reusable artwork (no image files needed) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a56bff"/>
+      <stop offset="0.55" stop-color="#7b3fd4"/>
+      <stop offset="1" stop-color="#54209f"/>
+    </linearGradient>
+    <linearGradient id="jacketGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6fc1"/>
+      <stop offset="0.5" stop-color="#e5369b"/>
+      <stop offset="1" stop-color="#a81570"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0a8"/>
+      <stop offset="1" stop-color="#ffc033"/>
+    </linearGradient>
+    <symbol id="rumi-mascot" viewBox="0 0 240 320">
+      <!-- back hair -->
+      <path d="M57 128 C48 62 78 24 121 24 C164 24 192 60 183 128 L190 208 C193 232 180 246 166 236 L156 186 L84 186 L74 236 C60 246 47 232 50 208 Z" fill="url(#hairGrad)"/>
+      <!-- braid -->
+      <g fill="#8b4fd6">
+        <circle cx="184" cy="150" r="15"/><circle cx="190" cy="172" r="14"/>
+        <circle cx="187" cy="193" r="13"/><circle cx="180" cy="212" r="11"/>
+      </g>
+      <rect x="176" y="222" width="22" height="9" rx="4.5" fill="url(#goldGrad)"/>
+      <!-- legs -->
+      <rect x="92" y="252" width="21" height="42" rx="10" fill="#4a237f"/>
+      <rect x="128" y="252" width="21" height="42" rx="10" fill="#4a237f"/>
+      <path d="M84 288 h34 c7 0 10 5 10 12 v6 H80 v-6 c0-7 1-12 4-12Z" fill="#fff" stroke="#e5369b" stroke-width="4"/>
+      <path d="M123 288 h34 c3 0 4 5 4 12 v6 h-48 v-6 c0-7 3-12 10-12Z" fill="#fff" stroke="#e5369b" stroke-width="4"/>
+      <!-- jacket -->
+      <path d="M78 174 C78 158 96 150 120 150 C144 150 162 158 162 174 L168 258 C168 268 158 274 150 268 L120 250 L90 268 C82 274 72 268 72 258 Z" fill="url(#jacketGrad)"/>
+      <path d="M112 152 L120 178 L128 152" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M78 176 Q120 196 162 176" fill="none" stroke="#ffd45e" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round"/>
+      <!-- arms -->
+      <path d="M80 178 C62 184 56 208 60 232" fill="none" stroke="#e5369b" stroke-width="22" stroke-linecap="round"/>
+      <path d="M160 178 C178 184 184 208 180 232" fill="none" stroke="#e5369b" stroke-width="22" stroke-linecap="round"/>
+      <circle cx="60" cy="234" r="13" fill="#ffd7b5"/>
+      <circle cx="180" cy="234" r="13" fill="#ffd7b5"/>
+      <!-- face -->
+      <ellipse cx="120" cy="112" rx="57" ry="61" fill="#ffd7b5"/>
+      <circle cx="64" cy="114" r="9" fill="#ffd7b5"/>
+      <circle cx="176" cy="114" r="9" fill="#ffd7b5"/>
+      <!-- front hair swoop -->
+      <path d="M64 100 C62 52 88 34 121 34 C154 34 178 52 176 100 C166 82 150 74 136 72 C124 88 100 96 64 100 Z" fill="url(#hairGrad)"/>
+      <path d="M64 100 C88 94 110 84 124 68" fill="none" stroke="#c99bff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+      <!-- headband -->
+      <path d="M66 78 Q120 52 174 78" fill="none" stroke="#ff4fae" stroke-width="13" stroke-linecap="round"/>
+      <path d="M116 62 l5 -10 5 10 11 1 -8 7 2 11 -10 -6 -10 6 2 -11 -8 -7Z" fill="url(#goldGrad)"/>
+      <!-- eyes -->
+      <ellipse cx="99" cy="116" rx="13" ry="17" fill="#fff"/>
+      <ellipse cx="141" cy="116" rx="13" ry="17" fill="#fff"/>
+      <ellipse cx="101" cy="118" rx="8" ry="11" fill="#3a1b64"/>
+      <ellipse cx="139" cy="118" rx="8" ry="11" fill="#3a1b64"/>
+      <circle cx="104" cy="113" r="3" fill="#fff"/>
+      <circle cx="142" cy="113" r="3" fill="#fff"/>
+      <path d="M86 96 Q98 89 110 96" fill="none" stroke="#54209f" stroke-width="4" stroke-linecap="round"/>
+      <path d="M130 96 Q142 89 154 96" fill="none" stroke="#54209f" stroke-width="4" stroke-linecap="round"/>
+      <!-- blush + smile -->
+      <ellipse cx="82" cy="135" rx="10" ry="6" fill="#ff8ec4" opacity=".7"/>
+      <ellipse cx="158" cy="135" rx="10" ry="6" fill="#ff8ec4" opacity=".7"/>
+      <path d="M108 138 Q120 151 132 138" fill="none" stroke="#a33d6e" stroke-width="4" stroke-linecap="round"/>
+      <!-- microphone -->
+      <rect x="52" y="196" width="7" height="34" rx="3.5" fill="#ffe08a" transform="rotate(-12 55 213)"/>
+      <circle cx="50" cy="192" r="12" fill="#5d2a9e" stroke="url(#goldGrad)" stroke-width="4"/>
+    </symbol>
+    <symbol id="star-icon" viewBox="0 0 24 24">
+      <path d="M12 2 l2.9 6.3 6.9.8 -5.1 4.7 1.4 6.8L12 17.3 6 20.6l1.4-6.8L2.3 9.1l6.9-.8Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+
+  <header class="topbar">
+    <button class="icon-btn" id="homeBtn" aria-label="Go to the stage home">
+      <span aria-hidden="true">🏠</span>
+    </button>
+
+    <div class="brand">
+      <div class="brand-star" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><use href="#star-icon"></use></svg>
+      </div>
+      <div class="brand-copy">
+        <h1>ABBY'S <span>ALPHABET STAGE</span></h1>
+        <p id="tagline">With Rumi — sing it, see it, learn it!</p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="star-counter" id="starCounter" title="Stars you've earned">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star-icon"></use></svg>
+        <span id="starCount">0</span>
+      </div>
+      <button class="icon-btn" id="soundBtn" aria-label="Turn sound on or off"><span id="soundIcon" aria-hidden="true">🔊</span></button>
+      <button class="icon-btn" id="parentBtn" aria-label="Grown-up settings"><span aria-hidden="true">⚙️</span></button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="sparkle-layer" aria-hidden="true"></div>
+    <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+
+    <!-- ============ HOME ============ -->
+    <section class="view is-active" id="view-home">
+      <div class="home-hero">
+        <div class="hero-mascot" aria-hidden="true">
+          <svg viewBox="0 0 240 320"><use href="#rumi-mascot"></use></svg>
+        </div>
+        <div class="hero-copy">
+          <h2>Ready, Abby?</h2>
+          <p>Rumi saved you a spot on stage!</p>
+          <div class="hero-buttons">
+            <button class="say-btn" id="heroSay" type="button">🔊 Hear Rumi say hi to Abby</button>
+            <button class="say-btn theme-btn" id="themeBtn" type="button">🎵 Rumi's Stage Theme</button>
+          </div>
+          <p class="home-tip" id="homeTip">Abby, pick a game and let's shine!</p>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <button class="game-card card-alpha" data-view="alpha" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🔤</span>
+          <span class="card-title">Alphabet Stage</span>
+          <span class="card-sub">A to Z with sounds</span>
+          <span class="card-go">PLAY ▶</span>
+        </button>
+
+        <button class="game-card card-color" data-view="color" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🌈</span>
+          <span class="card-title">Color Spotlight</span>
+          <span class="card-sub">Find every color</span>
+          <span class="card-go">PLAY ▶</span>
+        </button>
+
+        <button class="game-card card-word" data-view="word" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🐱</span>
+          <span class="card-title">Word Match</span>
+          <span class="card-sub">Pictures &amp; words</span>
+          <span class="card-go">PLAY ▶</span>
+        </button>
+
+        <button class="game-card card-spell" data-view="spell" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🧩</span>
+          <span class="card-title">Spell It!</span>
+          <span class="card-sub">Build little words</span>
+          <span class="card-go">PLAY ▶</span>
+        </button>
+
+        <button class="game-card card-wall" data-view="wall" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🖼️</span>
+          <span class="card-title">Picture Wall</span>
+          <span class="card-sub">80 picture words to hear &amp; spell</span>
+          <span class="card-go">EXPLORE ▶</span>
+        </button>
+
+        <button class="game-card card-coloring" data-view="coloring" type="button">
+          <span class="card-glow" aria-hidden="true"></span>
+          <span class="card-emoji" aria-hidden="true">🖍️</span>
+          <span class="card-title">Coloring Book</span>
+          <span class="card-sub">120 pages to color &amp; paint</span>
+          <span class="card-go">COLOR ▶</span>
+        </button>
+      </div>
+
+      <!-- ============ ABBY'S QUEST MAP ============ -->
+      <section class="quest-map" id="questMap" aria-label="Abby's quest map">
+        <div class="quest-head">
+          <div>
+            <h2>🗺️ Abby's Quest Map</h2>
+            <p id="questNext">Rumi is picking Abby's next adventure…</p>
+          </div>
+          <div class="progress-pill" id="questProgress">0 / 7 badges</div>
+        </div>
+        <div class="quest-grid" id="questGrid"></div>
+      </section>
+
+    </section>
+
+    <!-- ============ ALPHABET ============ -->
+    <section class="view" id="view-alpha">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Alphabet Stage</h2>
+        <div class="progress-pill" id="alphaProgress">0 / 26</div>
+      </div>
+      <p class="instruction">Tap a letter to hear it sing!</p>
+      <div class="letter-grid" id="letterGrid"></div>
+    </section>
+
+    <!-- ============ COLORS ============ -->
+    <section class="view" id="view-color">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Color Spotlight</h2>
+        <div class="progress-pill" id="colorProgress">Learn</div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Color game modes">
+        <button class="tab is-active" data-color-mode="learn" role="tab" aria-selected="true" type="button">🎨 Learn colors</button>
+        <button class="tab" data-color-mode="find" role="tab" aria-selected="false" type="button">🔎 Find colors</button>
+      </div>
+
+      <div class="color-learn" id="colorLearn">
+        <div class="spotlight" id="spotlight">
+          <div class="spotlight-beam" aria-hidden="true"></div>
+          <div class="spotlight-orb" id="spotlightOrb"></div>
+        </div>
+        <div class="big-word"><span class="color-example" id="colorExample" aria-hidden="true">🍇</span> <span id="colorName">Purple</span></div>
+        <div class="row-buttons">
+          <button class="action-btn" id="colorSay" type="button">🔊 Say it</button>
+          <button class="action-btn action-next" id="colorNext" type="button">Next ➡️</button>
+        </div>
+        <div class="swatch-row" id="swatchRow"></div>
+      </div>
+
+      <div class="color-find hidden" id="colorFind">
+        <div class="prompt-bubble" id="colorPrompt">Find the <strong>purple</strong> star!</div>
+        <div class="star-options" id="starOptions"></div>
+        <p class="tiny-hint" id="colorHint">Tap the right star!</p>
+      </div>
+    </section>
+
+    <!-- ============ WORDS ============ -->
+    <section class="view" id="view-word">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Word Match</h2>
+        <div class="progress-pill" id="wordProgress">1 / 8</div>
+      </div>
+      <div class="word-card">
+        <div class="word-question" id="wordQuestion">Which one is a <strong>cat</strong>?</div>
+        <div class="word-target" id="wordTarget" aria-hidden="true">🐱</div>
+        <div class="answer-row" id="wordAnswers"></div>
+        <div class="word-spell" id="wordSpell" aria-live="polite"></div>
+        <button class="action-btn listen-btn" id="wordSay" type="button">🔊 Say it again</button>
+      </div>
+    </section>
+
+    <!-- ============ SPELL ============ -->
+    <section class="view" id="view-spell">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Spell It!</h2>
+        <div class="progress-pill" id="spellProgress">1 / 8</div>
+      </div>
+      <div class="spell-card">
+        <div class="spell-picture" id="spellPicture" aria-hidden="true">🐱</div>
+        <p class="spell-label" id="spellLabel">Build the word:</p>
+        <div class="letter-slots" id="letterSlots"></div>
+        <div class="letter-bank" id="letterBank"></div>
+        <div class="row-buttons">
+          <button class="action-btn" id="spellSay" type="button">🔊 Say it</button>
+          <button class="action-btn" id="spellClear" type="button">↺ Clear</button>
+          <button class="action-btn action-next" id="spellNext" type="button">Next ➡️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COLORING BOOK ============ -->
+    <section class="view" id="view-coloring">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Coloring Book</h2>
+        <div class="progress-pill" id="coloringProgress">1 / 120</div>
+      </div>
+      <div class="tabs" id="coloringTabs" role="tablist" aria-label="Coloring categories"></div>
+      <div class="coloring-layout">
+        <div class="coloring-stage">
+          <div class="coloring-top">
+            <div class="coloring-title">
+              <span class="coloring-letter" id="coloringLetter">C</span>
+              <span class="coloring-word" id="coloringWord">cat</span>
+            </div>
+            <div class="row-buttons coloring-nav">
+              <button class="action-btn" id="coloringPrev" type="button">◀ Prev</button>
+              <button class="action-btn action-next" id="coloringNext" type="button">Next ➡️</button>
+            </div>
+          </div>
+          <div class="color-tools" id="colorTools" role="group" aria-label="Painting tools">
+            <button class="tool-btn is-active" data-tool="fill" type="button">🪣 Fill</button>
+            <button class="tool-btn" data-tool="brush" type="button">🖌️ Brush</button>
+            <span class="brush-sizes hidden" id="brushSizes" role="group" aria-label="Brush size">
+              <button class="size-btn" data-size="3" type="button" aria-label="Small brush">•</button>
+              <button class="size-btn is-active" data-size="7" type="button" aria-label="Medium brush">●</button>
+              <button class="size-btn" data-size="12" type="button" aria-label="Big brush">⬤</button>
+            </span>
+            <button class="action-btn" id="brushUndo" type="button">↶ Undo</button>
+            <button class="action-btn" id="brushClear" type="button">🧽 Clear paint</button>
+          </div>
+          <div class="coloring-paper">
+            <svg class="color-art" id="coloringArt" viewBox="0 0 120 150" role="img" aria-label="Coloring page"></svg>
+          </div>
+          <p class="coloring-fact" id="coloringFact"></p>
+          <div class="row-buttons coloring-actions">
+            <button class="action-btn listen-btn" id="coloringSay" type="button">🔊 Say it</button>
+            <button class="action-btn" id="coloringSurprise" type="button">🌈 Surprise me</button>
+            <button class="action-btn" id="coloringReset" type="button">↺ Reset page</button>
+            <button class="action-btn action-next" id="coloringSave" type="button">⭐ Save page</button>
+          </div>
+        </div>
+        <aside class="coloring-side">
+          <h3>Pick a color</h3>
+          <div class="color-palette" id="colorPalette"></div>
+          <div class="book-shelf">
+            <h3>My book <span id="bookCount">0</span></h3>
+            <div class="book-grid" id="bookGrid"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PICTURE WALL ============ -->
+    <section class="view" id="view-wall">
+      <div class="view-head">
+        <button class="back-btn" data-go-home type="button">◀ Back</button>
+        <h2>Picture Wall</h2>
+        <div class="progress-pill" id="wallProgress">80 pictures</div>
+      </div>
+      <div class="tabs" id="wallTabs" role="tablist" aria-label="Picture categories"></div>
+      <div class="wall-spell" id="wallSpell" aria-live="polite"></div>
+      <div class="wall-grid" id="wallGrid"></div>
+    </section>
+
+    <!-- ============ DOCKED MOVE PARADE ============ -->
+    <section class="mini-game" id="moveGame" aria-label="Move Parade mini-game">
+      <div class="mini-head">
+        <div>
+          <h2>💃 Rumi's Move Parade</h2>
+          <p>Do three moves, then remember the last one!</p>
+        </div>
+        <div class="progress-pill" id="moveProgress">Ready</div>
+      </div>
+      <div class="move-panel" id="movePanel"></div>
+    </section>
+
+  </main>
+
+  <div class="mascot-peek" id="mascotPeek" aria-hidden="true">
+    <svg viewBox="0 0 240 320"><use href="#rumi-mascot"></use></svg>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============ GROWN-UP SETTINGS ============ -->
+  <div class="modal" id="parentModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="parentTitle">
+      <h2 id="parentTitle">Grown-up corner</h2>
+      <p class="modal-note">Tiny settings for big helpers.</p>
+
+      <label class="setting-row">
+        <span>🔊 Speaking voice</span>
+        <input type="checkbox" id="voiceToggle" checked>
+      </label>
+      <div class="setting-row">
+        <span>🗣️ Choose voice</span>
+        <select id="voiceSelect" aria-label="Choose the speaking voice"></select>
+      </div>
+      <div class="setting-row">
+        <span>🔊 Test voice</span>
+        <button class="action-btn test-voice-btn" id="testVoice" type="button">Say hi to Abby</button>
+      </div>
+      <label class="setting-row">
+        <span>🎤 Happy sounds</span>
+        <input type="checkbox" id="sfxToggle" checked>
+      </label>
+      <label class="setting-row">
+        <span>🎵 Stage theme music</span>
+        <input type="checkbox" id="musicToggle" checked>
+      </label>
+      <label class="setting-row">
+        <span>🐢 Slow talk</span>
+        <input type="checkbox" id="slowToggle">
+      </label>
+
+      <div class="parent-stats" id="parentStats"></div>
+
+      <div class="modal-actions">
+        <button class="action-btn" id="resetStars" type="button">Reset stars</button>
+        <button class="action-btn action-next" data-close-modal type="button">All done ✓</button>
+      </div>
+      <p class="modal-fineprint">Rumi is an original, kid-friendly stage star inspired by KPop Demon Hunters. Made for curious little learners.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/coloring.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
